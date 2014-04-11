@@ -6,7 +6,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$sql="INSERT INTO atividade (nomeatividade) VALUES ('${_GET['atividade']}')";
+$sql="INSERT INTO atividade(nomeatividade) VALUES ('${_GET['atividade']}')";
 
 if (!mysqli_query($con,$sql))
   {
