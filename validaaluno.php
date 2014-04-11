@@ -40,8 +40,8 @@
 
  $celular = $_POST["txt_celular"];
  
- $inicio = $_POST["txt_inicio"];
- 
+ $date = $_POST["txt_inicio"];
+  
  $motivo = $_POST["txa_motivo"];
  
  $comentario = $_POST["txa_comentario"];
@@ -80,31 +80,37 @@ function isValidDate($date){
               if(checkdate($matches[2], $matches[1], $matches[3])){
 
                       return true;
-
 		}
 
 	}
 }
 
-
 if(isValidDate($date)){
-	echo "Idade: ", $idade, " ", "<br><br>";
+
+
+
+	echo "Data de início: ", $date, " ", "<br><br>";
+
 } 
+
 else
+
 {
+
 	echo "Data Inválida. Digite: DD/MM/AAAA";
+
 }
 
 //fim valida data
 
 	if (! isset($_POST["chk_atividades"]) || (count($_POST["chk_atividades"]) < 1)) {
 
-		echo "Favor selecionar seus hobbies!<br><br>";
+		echo "Favor selecionar suas atividades!<br><br>";
 
 		$erro=true;
 
 	} else {
-		$hobbies = $_POST["chk_atividades"];
+		$atividades = $_POST["chk_atividades"];
 		echo "Suas atividades de praferência são:<br/><ul>";
 	
 		if ($query = mysqli_query($con, 'SELECT * FROM atividade WHERE idatividade IN (' . implode(',', $atividades) . ')')) {
@@ -119,8 +125,6 @@ else
 
 	}
 
-
-
 	if(strlen($comentario) < 1)
 
 {echo "Favor digitar um comentário suas experiências com Inglês!<br><br>"; $erro=true;}
@@ -128,12 +132,6 @@ else
 	else 
 
 		{echo "Comentário sobre suas experiências com Inglês:<br>", nl2br($comentario), "<br><br>";}
-
-	
-
-	
-
-	
 
 ?>
 
