@@ -161,8 +161,6 @@ http.send();
 }
 
 
-
-
 function addHobbie()
 {
 
@@ -253,7 +251,3 @@ idade--;
 document.getElementById("age").textContent = "Idade: "+idade+" anos";
 document.getElementById("hid_age").value = idade;
 }
-
-
-
-
