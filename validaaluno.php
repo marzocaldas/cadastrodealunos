@@ -70,32 +70,7 @@
 
 	else {echo "Endereço: ", $endereco, "<br><br>";}
 
-	
-
-
-
-	if (isset($_POST["rdo_sexo"])) {
-
-	?>
-
-	<?php echo ($_POST['rdo_sexo'] == 'M' ? 'Sexo: Masculino' : 'Sexo: Feminino'); ?><br/><br/>
-
-	<?php
-
-	} else {
-
-		echo "Por favor informar o Sexo.<br><br>\n";
-
-	}
-
-
-
-		$estadoCivil = $aEstadoCivil[ $civil ];
-
-		echo "Estado Civil: ", $estadoCivil, "<br><br>";
-
 		
-
 //inicio valida data
 
 function isValidDate($date){
@@ -113,41 +88,29 @@ function isValidDate($date){
 
 
 if(isValidDate($date)){
-
-
-
 	echo "Idade: ", $idade, " ", "<br><br>";
-
 } 
-
 else
-
 {
-
 	echo "Data Inválida. Digite: DD/MM/AAAA";
-
 }
 
 //fim valida data
 
-	
-
-	
-
-	if (! isset($_POST["chk_hobbies"]) || (count($_POST["chk_hobbies"]) < 1)) {
+	if (! isset($_POST["chk_atividades"]) || (count($_POST["chk_atividades"]) < 1)) {
 
 		echo "Favor selecionar seus hobbies!<br><br>";
 
 		$erro=true;
 
 	} else {
-		$hobbies = $_POST["chk_hobbies"];
-		echo "Seus hobbies são:<br/><ul>";
+		$hobbies = $_POST["chk_atividades"];
+		echo "Suas atividades de praferência são:<br/><ul>";
 	
-		if ($query = mysqli_query($con, 'SELECT * FROM hoobies WHERE idhoobies IN (' . implode(',', $hobbies) . ')')) {
+		if ($query = mysqli_query($con, 'SELECT * FROM atividade WHERE idatividade IN (' . implode(',', $atividades) . ')')) {
 			while($row = mysqli_fetch_assoc($query)) {
-				echo "<li><b>${row['nmhoobies']}</b></li>\n";
-				$nomes[$row['idhoobies']] = $row['nmhoobies'];
+				echo "<li><b>${row['nomeatividade']}</b></li>\n";
+				$nomes[$row['idatividade']] = $row['nomeatividade'];
 			}
 			mysqli_free_result($query);
 		}
@@ -160,11 +123,11 @@ else
 
 	if(strlen($comentario) < 1)
 
-{echo "Favor digitar um comentário sobre você!<br><br>"; $erro=true;}
+{echo "Favor digitar um comentário suas experiências com Inglês!<br><br>"; $erro=true;}
 
 	else 
 
-		{echo "Comentário sobre você:<br>", nl2br($comentario), "<br><br>";}
+		{echo "Comentário sobre suas experiências com Inglês:<br>", nl2br($comentario), "<br><br>";}
 
 	
 
@@ -180,8 +143,7 @@ else
 
 </html>
 <?php
-	include_once('inserecliente.php');
-	include_once('geraxml.php');
+	include_once('inserealuno.php');
 
 	mysqli_close($con);
 ?>
