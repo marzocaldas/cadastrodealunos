@@ -2,7 +2,7 @@
 <?php
 
 $date = substr($date, 6, 4) . '-' . substr($date, 3, 2) . '-' . substr($date, 0, 2);
-$sql="INSERT INTO aluno (nomealuno, dcendereco, celular, dtinicio, motivo, dtcadastro, motivo) VALUES (\"$nome\", \"$endereco\", \"$celular\", \"$inicio\", \"$motivo\", \"$comentario\", NOW())";
+$sql="INSERT INTO aluno (nomealuno, dcendereco, celular, dtinicio, motivo, txcomentario, dtcadastro) VALUES (\"$nome\", \"$endereco\", \"$celular\", \"$date\", \"$motivo\", \"$comentario\", NOW())";
 if (!mysqli_query($con, $sql))
 {
 	die('Erro inserindo aluno: ' . mysqli_error($con));
