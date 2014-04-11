@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Cadastro de Hobbies</title>
+
+<style>
+
+.borda {
+
+                  border: thin solid #000;
+
+}
+
+</style>
+
+<script type="text/javascript" src= "javascript.js"></script>
+
+</head>
+
+
+<body onload="loadHobbiesTabelaAJAX('hobbies.php')">
+
+<form name="frmhobbie" method="post" action="validacliente.php" onSubmit= "return validacao();">
+
+<hidden id="auxHobbie"/>
+
+<table width="509" align="center" class="borda" cellpadding="5" cellspacing="3" border="1" height=400">
+
+                  <tr>
+
+                  <td><label for="txt_nome">Nome</label></td>
+
+    <td><input type="text" name="txt_nome" id="txt_nome" value=""/></td>
+
+  </tr>
+
+  <tr>
+
+    <td><label for="txt_endereco">Endereço</label></td>
+
+    <td><input type="text" name="txt_endereco" id="txt_endereco" value="" /></td>
+
+  </tr>
+  <tr>
+
+    <td><label for="txt_endereco">Celular</label></td>
+
+    <td><input type="text" name="txt_celular" id="txt_celular" value="" /></td>
+
+  </tr>
+
+  <tr>
+
+                  <td><label for="txt_inicio">Data de Início das aulas</label></td>
+
+    <td> <input type="text" name="txt_inicio" id="txt_inicio" onblur="showAge()" value="" maxlength="10" /> 
+
+  </tr>
+
+  <tr>
+
+    <td colspan="2">Atividades de preferência no estudo de Inglês</td>
+
+    </tr>
+
+  <tr>
+
+    <td colspan="2">
+	
+	<table id="tableAtividades" width="100%">
+
+	        <tr>
+        <td colspan="2" align="center"><input type="button" name="btn_addatividades" id="btn_addatividades" onClick="addHobbie()" value="Adicionar uma Atividade" /></td>
+          </tr>
+
+	 
+    </table></td>
+
+    </tr>
+    
+    <tr>
+
+    <td colspan="2"><label for="txa_motivo">Motivo/objetivo para o início das aulas</label></td>
+
+    </tr>
+	
+	
+	
+  <tr>
+
+    <td colspan="2"><textarea rows="1" cols="70" name="txa_motivo" id="txa_motivo"></textarea></td>
+
+    </tr>
+
+  <tr>
+
+  <tr>
+
+    <td colspan="2"><label for="txa_comentario">Comente sobre seus objetivos e historico com Inglês</label></td>
+
+    </tr>
+	
+	
+	
+  <tr>
+
+    <td colspan="2"><textarea rows="5" cols="70" name="txa_comentario" id="txa_comentario"></textarea></td>
+
+    </tr>
+
+  <tr>
+
+    <td colspan="2" align="center"><input type="submit" name="sbm_enviar" id="sbm_enviar" value="Enviar" onclick="return validaCampos();"/>&nbsp;<input type="reset" name="rst_limpar" id="rst_limpar" value="Limpar" /></td>
+
+    </tr>
+
+</table>
+
+</form>
+
+</body>
+
+
+</html>
