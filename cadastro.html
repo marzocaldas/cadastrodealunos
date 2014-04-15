@@ -23,11 +23,11 @@
 
 <body onload="loadHobbiesTabelaAJAX('atividades.php')">
 
-<form name="frmhobbie" method="post" action="validaaluno.php" onSubmit= "return validacao();">
+<form name="frmaluno" method="post" action="validaaluno.php" onSubmit= "return validacao();">
 
 <hidden id="auxHobbie"/>
 
-<table width="509" align="center" class="borda" cellpadding="5" cellspacing="3" border="1" height=400">
+<table width="60" align="center" class="borda" cellpadding="1" cellspacing="1" border="1" height=50">
 
                   <tr>
 
@@ -49,6 +49,30 @@
     <td><label for="txt_endereco">Celular</label></td>
 
     <td><input type="text" name="txt_celular" id="txt_celular" value="" /></td>
+
+  </tr>
+  
+   <tr>
+
+    <td><label for="txt_email">E-mail - este será seu usuário de login</label></td>
+
+    <td><input type="text" name="txt_email" id="txt_email" value="" /></td>
+
+  </tr>
+  
+   <tr>
+
+    <td><label for="txt_senha">Senha</label></td>
+
+    <td><input type="password" name="txt_senha" id="txt_senha" value="" /></td>
+
+  </tr>
+  
+  <tr>
+
+    <td><label for="txt_confirma_senha">Confirme a Senha</label></td>
+
+    <td><input type="password" name="txt_confirma_senha" id="txt_confirma_senha" onblur="validasenha()" value="" /></td>
 
   </tr>
 
