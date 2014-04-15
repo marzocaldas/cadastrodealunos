@@ -8,7 +8,7 @@ $senha = mysqli_real_escape_string($con, $_POST['txt_senha']);
 $email = mysqli_real_escape_string($con, $_POST['txt_email']);
 $nivel = 1;
 $sql="INSERT INTO aluno (nomealuno, dcendereco, celular, dtinicio, motivo, txcomentario, dtcadastro) VALUES (\"$nome\", \"$endereco\", \"$celular\", \"$date\", \"$motivo\", \"$comentario\", NOW())";
-$sql="INSERT INTO usuarios (nome, usuario, senha, email, nivel) VALUES (\"$nome\", \"$usuario\", \"$senha\", \"$email\", $nivel)";
+$sql="INSERT INTO usuarios (nome, usuario, senha, email, nivel) VALUES (\"$nome\", \"$usuario\", SHA1(\"$senha\"), \"$email\", $nivel)";
 if (!mysqli_query($con, $sql))
 {
 	die('Erro inserindo aluno: ' . mysqli_error($con));
