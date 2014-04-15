@@ -4,60 +4,39 @@ function validacao(){
 	/*1)Validações dos dos itens nomes e 'Comente um pouco sobre você'. 
 	Ambas devem obrigar que o usuário digite pelo menos DUAS PALAVRAS*/ 
 	var twoWordsRegex = new RegExp(/(^[A-Za-z]{2,}\s[A-Za-z-']{3,}$)/);//usando uma expressão regular para validação do nome e sobrenome (duas palavras)
-	if(!twoWordsRegex.test(document.frmhobbie.txt_nome.value)){
+	if(!twoWordsRegex.test(document.frmaluno.txt_nome.value)){
 		alert("Por favor, preencha o nome e sobrenome.");
-		document.frmhobbie.txt_nome.focus();
+		document.frmaluno.txt_nome.focus();
 			return false;
 	}
 	
 	
-	if((document.frmhobbie.txa_comentario.value < 10 || document.frmhobbie.txa_comentario.value > 1000)){ //validação minimo de duas palavras(usei um minimo de 10 e um maximo de 1000 caracteres)
+	if((document.frmaluno.txa_comentario.value < 10 || document.frmaluno.txa_comentario.value > 1000)){ //validação minimo de duas palavras(usei um minimo de 10 e um maximo de 1000 caracteres)
 		alert("Por favor, comente um pouco sobre você, use pelo menos duas palavras.");
-		document.frmhobbie.txa_comentario.focus();
+		document.frmaluno.txa_comentario.focus();
 			return false;
 	}
 	
 	/*2)	Valdando o item Endereço, o qual deve conter pelo menos DUAS LETRAS.
 	O item Sexo deve validar se o usuário marcou o campo*/
-	if(document.frmhobbie.txt_endereco.value.length < 2){
+	if(document.frmaluno.txt_endereco.value.length < 2){
 		alert("Por favor, preencha o compo endereço com pelo menos duas letras.");
-		document.frmhobbie.txt_endereco.focus();
+		document.frmaluno.txt_endereco.focus();
 			return false;
 	}
-	if (!document.frmhobbie.rdo_sexo[0].checked && !document.frmhobbie.rdo_sexo[1].checked) {
-			alert('Por favor, elecione o Sexo');
-			return false;
-		}
-		
-	/*3)	Validando o item Hobbies, o usuário deve marcar no mínimo UM HOBBIE. O campo Descreva é obrigatório
-	e deve conter pelo menos DUAS LETRAS enquanto o item Outros estiver marcado */
-	if(!document.getElementById('chk_hobbies_0').checked && !document.getElementById('chk_hobbies_1').checked && !document.getElementById('chk_hobbies_2').checked &&
-	!document.getElementById('chk_hobbies_3').checked && !document.getElementById('chk_hobbies_4').checked && !document.getElementById('chk_hobbies_5').checked && 
-	!document.getElementById('chk_hobbies_6').checked && !document.getElementById('chk_hobbies_7').checked && !document.getElementById('chk_hobbies_8').checked){
-
-		 alert('Por favor, selecione algum Hobbie.');
-		return false;
-		}
-	if(document.getElementById('chk_hobbies_8').checked && document.frmhobbie.txt_outros.value.length < 2){//se o checkbox outros está marcado obriga descrição no campo de texto ao lado
 	
-		alert("Por Favor, descreva seu hobbie.");
-		document.frmhobbie.txt_outros.focus();
-		return false;
-		}
 		
-		/*4)	Validando o item Idade, somente deve aceitar a digitação de números. 
-		O número digitado deve ser maior que 2 e inferior a 150 */
-		if(document.frmhobbie.txt_idade.value == ""){ //verifica se capo está vazio
-		alert("Por favor, informe a idade.")
-		document.frmhobbie.txt_idade.focus();
-		return false;
-		}
-		if(isNaN(document.frmhobbie.txt_idade.value) || document.frmhobbie.txt_idade.value > 150){ //verifica se o campo é número e menor que 150
-		alert("Digite apenas números. Valor máximo 150.")
-		document.frmhobbie.txt_idade.focus();
-		return false;
-		}
 }
+
+/*2) Função para validar a senha*/
+function validasenha(){
+	if(document.frmaluno.txt_senha.value !== document.frmaluno.txt_confirma_senha.value){
+		alert("Senhas diferentes.");
+		document.frmaluno.txt_endereco.focus();
+			return false;
+	}
+}
+
 
 /*
 AJAX
