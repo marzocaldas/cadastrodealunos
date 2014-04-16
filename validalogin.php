@@ -28,8 +28,13 @@ if (mysql_num_rows($query) != 1) {
 	$_SESSION['UsuarioID'] = $resultado['id'];
 	$_SESSION['UsuarioNome'] = $resultado['nome'];
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
-
-	header("Location: restrito.php"); exit;
+	
+	if ($_SESSION['UsuarioNivel'] = 2) {
+	header("Location: arquivoaluno.php"); exit;
+	}
+	else{
+		header("Location: restrito.php"); exit;
+	}
 }
 
 ?>
