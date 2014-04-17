@@ -111,7 +111,7 @@ else
 
 	} else {
 		$atividades = $_POST["chk_atividades"];
-		echo "Suas atividades de praferência são:<br/><ul>";
+		echo "Suas atividades de preferência são:<br/><ul>";
 	
 		if ($query = mysqli_query($con, 'SELECT * FROM atividade WHERE idatividade IN (' . implode(',', $atividades) . ')')) {
 			while($row = mysqli_fetch_assoc($query)) {
