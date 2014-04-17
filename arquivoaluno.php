@@ -10,7 +10,7 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
 
 	session_destroy();
 
-	header("Location: index.php"); exit;
+	header("Location: login.php"); exit;
 }
 
 ?>
