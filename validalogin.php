@@ -2,7 +2,7 @@
 
 
 if (!empty($_POST) AND (empty($_POST['usuario']) OR empty($_POST['senha']))) {
-	header("Location: index.php"); exit;
+	header("Location: login.php"); exit;
 }
 
 
