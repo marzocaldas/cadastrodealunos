@@ -29,7 +29,7 @@ if (mysql_num_rows($query) != 1) {
 	$_SESSION['UsuarioNome'] = $resultado['nome'];
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
 	
-	if ($_SESSION['UsuarioNivel'] = 2) {
+	if ($_SESSION['UsuarioNivel'] == 2) {
 	header("Location: arquivoaluno.php"); exit;
 	}
 	else{
